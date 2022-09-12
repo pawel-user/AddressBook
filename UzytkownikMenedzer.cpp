@@ -121,3 +121,12 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
+
+int UzytkownikMenedzer::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+    adresaci.clear();
+    cout << "Pomyslnie wylogowales sie." << endl;
+
+    return idZalogowanegoUzytkownika;
+}
