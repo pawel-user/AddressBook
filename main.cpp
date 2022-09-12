@@ -16,6 +16,10 @@ int main()
     ksiazkaAdresowa.logowanieUzytkownika();
     cout << endl << "Zmiana hasla uzytkownika:" << endl;
     ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+    cout << endl << "Wylogowanie uzytkownika:" << endl;
+    system("pause");
+    ksiazkaAdresowa.wylogowanieUzytkownika();
+
 
     return 0;
 }
