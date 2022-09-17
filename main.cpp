@@ -14,8 +14,10 @@ int main()
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     cout << endl << "Logowanie uzytkownika:" << endl;
     ksiazkaAdresowa.logowanieUzytkownika();
+    cin.sync();
     cout << endl << "Zmiana hasla uzytkownika:" << endl;
     ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+    cin.sync();
     cout << endl << "Wylogowanie uzytkownika:" << endl;
     system("pause");
     ksiazkaAdresowa.wylogowanieUzytkownika();
