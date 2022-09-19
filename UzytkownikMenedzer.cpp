@@ -131,3 +131,9 @@ int UzytkownikMenedzer::wylogowanieUzytkownika()
 
     return idZalogowanegoUzytkownika;
 }
+
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
+
