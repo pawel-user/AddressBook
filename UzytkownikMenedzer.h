@@ -10,12 +10,13 @@
 #include "Uzytkownik.h"
 #include "Adresat.h"
 #include "PlikZUzytkownikami.h"
+#include "MenedzerAdresatow.h"
 
 using namespace std;
 
 class UzytkownikMenedzer
 {
-    int idZalogowanegoUzytkownika;
+    static int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
     vector <Adresat> adresaci;
     PlikZUzytkownikami plikZUzytkownikami;
@@ -32,6 +33,8 @@ public:
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     int wylogowanieUzytkownika();
+
+    static int pobierzIdZalogowanegoUzytkownika();
 };
 
 #endif

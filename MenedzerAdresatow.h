@@ -18,11 +18,12 @@ class MenedzerAdresatow
     int idUsunietegoAdresata;
     vector <Adresat> adresaci;
 
+    Adresat podajDaneNowegoAdresata();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-    Adresat podajDaneNowegoAdresata(UzytkownikMenedzer uzytkownikMenedzer);
 
 public:
-
+    MenedzerAdresatow();
+    int dodajAdresata();
 };
 
 #endif
