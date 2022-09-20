@@ -16,13 +16,17 @@ class MenedzerAdresatow
 {
     int idOstatniegoAdresata;
     int idUsunietegoAdresata;
+    int idZalogowanegoUzytkownika;
     vector <Adresat> adresaci;
 
+    Adresat podajDaneNowegoAdresata();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-    Adresat podajDaneNowegoAdresata(UzytkownikMenedzer uzytkownikMenedzer);
 
 public:
-
+    MenedzerAdresatow();
+    int dodajAdresata();
+    int pobierzIdZalogowanegoUzytkownika();
+    void ustawIdZalogowanegoUzytkownika(int aktualneIdZalogowanegoUzytkownika);
 };
 
 #endif

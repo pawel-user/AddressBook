@@ -15,8 +15,13 @@ int main()
     cout << endl << "Logowanie uzytkownika:" << endl;
     ksiazkaAdresowa.logowanieUzytkownika();
     cin.sync();
-    cout << endl << "Zmiana hasla uzytkownika:" << endl;
-    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+    //cout << endl << "Zmiana hasla uzytkownika:" << endl;
+    //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+    //cin.sync();
+    //system("pause");
+    cout << endl << "Dodawanie nowego adresata:" << endl;
+    system("pause");
+    ksiazkaAdresowa.dodajAdresata();
     cin.sync();
     system("pause");
     cout << endl << "Wylogowanie uzytkownika:" << endl;
