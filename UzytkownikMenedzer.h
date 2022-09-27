@@ -33,7 +33,7 @@ public:
     void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     int wylogowanieUzytkownika();
-
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int pobierzIdZalogowanegoUzytkownika();
 };
 
