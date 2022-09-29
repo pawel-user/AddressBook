@@ -120,11 +120,11 @@ void MenedzerAdresatow::wyswietlWszystkichAdresatow()
         cout << "             >>> ADRESACI <<<" << endl;
         cout << "-----------------------------------------------" << endl;
 
-        for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+        for (int i = 0; i < (int) adresaci.size(); i++)
         {
-            wyswietlDaneAdresata(*itr);
+            wyswietlDaneAdresata(adresaci[i]);
+            cout << endl;
         }
-        cout << endl;
     }
     else
     {
@@ -142,4 +142,3 @@ void MenedzerAdresatow::wyswietlDaneAdresata(Adresat adresat)
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
-
