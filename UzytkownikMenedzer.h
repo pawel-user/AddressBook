@@ -18,7 +18,6 @@ class UzytkownikMenedzer
 {
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
-    vector <Adresat> adresaci;
     PlikZUzytkownikami plikZUzytkownikami;
 
     Uzytkownik podajDaneNowegoUzytkownika();
@@ -34,6 +33,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     int wylogowanieUzytkownika();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+
     int pobierzIdZalogowanegoUzytkownika();
 };
 

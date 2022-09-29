@@ -14,11 +14,6 @@
 
 using namespace std;
 
-//class PlikZAdresatami;
-//{
-//    class MenedzerAdresatow;
-//};
-
 class MenedzerAdresatow
 {
     int idOstatniegoAdresata;
@@ -33,7 +28,11 @@ class MenedzerAdresatow
 
 public:
     MenedzerAdresatow(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
+    void wylogowanieUzytkownika();
     int dodajAdresata();
+    void wypiszAdresatowZalogowanegoUzytkownika();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+
     int pobierzIdZalogowanegoUzytkownika();
     int pobierzIdOstatniegoAdresata();
     int pobierzIdUsunietegoAdresata();
@@ -41,8 +40,6 @@ public:
     void ustawIdOstatniegoAdresata(int aktualneIdOstatniegoAdresata);
     void ustawIdUsunietegoAdresata(int aktualneIdUsunietegoAdresata);
 
-    void wypiszAdresatowZalogowanegoUzytkownika();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 };
 
 #endif

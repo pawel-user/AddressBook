@@ -15,17 +15,17 @@ int MenedzerAdresatow::pobierzIdUsunietegoAdresata()
     return idUsunietegoAdresata;
 }
 
-/*Adresat MenedzerAdresatow::pobierzAdresata()
+void MenedzerAdresatow::wylogowanieUzytkownika()
 {
-    return adresat;
-}*/
+    adresaci.clear();
+    idZalogowanegoUzytkownika = 0;
+}
 
 void MenedzerAdresatow::ustawIdZalogowanegoUzytkownika(int aktualneIdZalogowanegoUzytkownika)
 {
     if(aktualneIdZalogowanegoUzytkownika >= 0)
     {
         idZalogowanegoUzytkownika = aktualneIdZalogowanegoUzytkownika;
-        cout << "idZalogowanegoUzytkownika = " << idZalogowanegoUzytkownika << endl;
     }
 }
 
@@ -34,8 +34,6 @@ void MenedzerAdresatow::ustawIdOstatniegoAdresata(int aktualneIdOstatniegoAdresa
     if(aktualneIdOstatniegoAdresata >= 0)
     {
         idOstatniegoAdresata = aktualneIdOstatniegoAdresata;
-        cout << "idOstatniegoAdresata = " << idOstatniegoAdresata << endl;
-        system("pause");
     }
 }
 
@@ -44,7 +42,7 @@ void MenedzerAdresatow::ustawIdUsunietegoAdresata(int aktualneIdUsunietegoAdresa
     if(aktualneIdUsunietegoAdresata >= 0)
     {
         idUsunietegoAdresata = aktualneIdUsunietegoAdresata;
-        cout << "idUsunietegoAdresata = " << idUsunietegoAdresata << endl;
+        //cout << "idUsunietegoAdresata = " << idUsunietegoAdresata << endl;
     }
 }
 
@@ -64,8 +62,6 @@ Adresat MenedzerAdresatow::podajDaneNowegoAdresata()
 {
     Adresat adresat;
     adresat.ustawId(++idOstatniegoAdresata);
-    cout << "Test: " << pobierzIdOstatniegoAdresata() << endl;
-    system("pause");
     adresat.ustawIdUzytkownika(pobierzIdZalogowanegoUzytkownika());
 
     cout << "Podaj imie: ";
@@ -98,25 +94,21 @@ string MenedzerAdresatow::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string teks
     return tekst;
 }
 
-/*void MenedzerAdresatow::dopiszAdresataDoPliku()
-{
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-}*/
-
 void MenedzerAdresatow::wypiszAdresatowZalogowanegoUzytkownika()
 {
     for (int i = 0; i < (int) adresaci.size(); i++)
     {
-        cout << adresaci[i].pobierzId() << adresaci[i].pobierzId() << endl;
-        cout << adresaci[i].pobierzIdUzytkownika() << adresaci[i].pobierzIdUzytkownika() << endl;
+        cout << adresaci[i].pobierzId() << endl;
+        cout << adresaci[i].pobierzIdUzytkownika() << endl;
         cout << adresaci[i].pobierzImie() << " " << adresaci[i].pobierzNazwisko() << endl;
         cout << adresaci[i].pobierzNumerTelefonu() << endl;
         cout << adresaci[i].pobierzEmail() << endl;
-        cout << adresaci[i].pobierzAdres() << endl;
+        cout << adresaci[i].pobierzAdres() << endl << endl;
     }
 }
 
 void MenedzerAdresatow::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    ustawIdOstatniegoAdresata(plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, pobierzIdZalogowanegoUzytkownika()));
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(pobierzIdZalogowanegoUzytkownika());
+    idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
 }
