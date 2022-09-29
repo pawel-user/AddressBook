@@ -15,6 +15,7 @@ public:
     static int konwersjaStringNaInt(string liczba);
     static string wczytajLinie();
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    static char wczytajZnak();
 };
 
 #endif
