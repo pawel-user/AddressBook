@@ -4,3 +4,5 @@
 3|2|Mariusz|Boczny|222|m.boczny@wp.pl|Gdansk|
 4|2|Michal|Mocny|444|michal@o2.pl|Lublin|
 5|1|Sylwia|Biala|555|s.biala@gmail.com|Szczecin|
+6|1|Maria|Wolny|777|maria.wolny@gmail.com|Bialystok|
+7|2|Maria|Wolny|99|wolnymaria@wp.pl|Bialystok|

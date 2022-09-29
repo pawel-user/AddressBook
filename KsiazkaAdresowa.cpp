@@ -39,3 +39,7 @@ void KsiazkaAdresowa::wypiszAdresatowZalogowanegoUzytkownika()
     menedzerAdresatow.wypiszAdresatowZalogowanegoUzytkownika();
 }
 
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    menedzerAdresatow.wyswietlWszystkichAdresatow();
+}
