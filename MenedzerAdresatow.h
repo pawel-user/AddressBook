@@ -4,11 +4,13 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <fstream>
+#include <cstdlib>
 
 #include "Adresat.h"
 #include "Uzytkownik.h"
+#include "PlikZAdresatami.h"
 #include "UzytkownikMenedzer.h"
-#include "MetodyPomocnicze.h"
 
 using namespace std;
 
@@ -16,12 +18,27 @@ class MenedzerAdresatow
 {
     int idOstatniegoAdresata;
     int idUsunietegoAdresata;
+    int idZalogowanegoUzytkownika;
     vector <Adresat> adresaci;
 
+    PlikZAdresatami plikZAdresatami;
+
+    Adresat podajDaneNowegoAdresata();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-    Adresat podajDaneNowegoAdresata(UzytkownikMenedzer uzytkownikMenedzer);
 
 public:
+    MenedzerAdresatow(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
+    void wylogowanieUzytkownika();
+    int dodajAdresata();
+    void wypiszAdresatowZalogowanegoUzytkownika();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+
+    int pobierzIdZalogowanegoUzytkownika();
+    int pobierzIdOstatniegoAdresata();
+    int pobierzIdUsunietegoAdresata();
+    void ustawIdZalogowanegoUzytkownika(int aktualneIdZalogowanegoUzytkownika);
+    void ustawIdOstatniegoAdresata(int aktualneIdOstatniegoAdresata);
+    void ustawIdUsunietegoAdresata(int aktualneIdUsunietegoAdresata);
 
 };
 
