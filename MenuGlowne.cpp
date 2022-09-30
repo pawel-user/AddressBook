@@ -1,16 +1,5 @@
 #include "MenuGlowne.h"
 
-char MenuGlowne::dokonajWyboru()
-{
-    wybor = MetodyPomocnicze::wczytajZnak();
-    return wybor;
-}
-
-void MenuGlowne::ustawWybor(char aktualnyWybor)
-{
-    wybor = aktualnyWybor;
-}
-
 void MenuGlowne::wyswietlMenuGlowne()
 {
     system("cls");
@@ -21,3 +10,21 @@ void MenuGlowne::wyswietlMenuGlowne()
     cout << "9. Koniec programu" << endl;
     cout << "---------------------------" << endl;
 }
+
+char MenuGlowne::wybierzOpcjeZMenuGlownego()
+{
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+    return wybor;
+}
+
+char MenuGlowne::pobierzWyborOpcjiZMenuGlownego()
+{
+    return wybor;
+}
+
+void MenuGlowne::ustawWybor(char aktualnyWybor)
+{
+    wybor = aktualnyWybor;
+}
+

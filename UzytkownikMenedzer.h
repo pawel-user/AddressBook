@@ -9,6 +9,8 @@
 
 #include "Uzytkownik.h"
 #include "Adresat.h"
+#include "MenuGlowne.h"
+#include "MenuUzytkownika.h"
 #include "PlikZUzytkownikami.h"
 #include "MenedzerAdresatow.h"
 
@@ -18,6 +20,8 @@ class UzytkownikMenedzer
 {
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
+    MenuGlowne menuGlowne;
+    MenuUzytkownika menuUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
 
     Uzytkownik podajDaneNowegoUzytkownika();
@@ -26,15 +30,22 @@ class UzytkownikMenedzer
 
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+    void wyswietlMenuGlowne();
+    char wybierzOpcjeZMenuGlownego();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     void logowanieUzytkownika();
+    void wyswietlKomunikatBrakOpcji();
+
+    void wyswietlMenuUzytkownika();
+    char wybierzOpcjeZMenuUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     int wylogowanieUzytkownika();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 
     int pobierzIdZalogowanegoUzytkownika();
+    void ustawIdZalogowanegoUzytkownika(int aktualneIdZalogowanegoUzytkownika);
 };
 
 #endif

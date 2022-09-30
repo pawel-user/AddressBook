@@ -13,8 +13,9 @@ class MenuGlowne
 
 public:
     void wyswietlMenuGlowne();
-    char dokonajWyboru();
+    char wybierzOpcjeZMenuGlownego();
 
+    char pobierzWyborOpcjiZMenuGlownego();
     void ustawWybor(char aktualnyWybor);
 };
 
