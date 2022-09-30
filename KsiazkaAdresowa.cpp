@@ -7,7 +7,6 @@ void KsiazkaAdresowa::zarzadzajMenuGlowne()
         if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika() == 0)
         {
             uzytkownikMenedzer.wyswietlMenuGlowne();
-            //uzytkownikMenedzer.dokonajWyboruOpcjiZMenuGlownego();
 
             switch (uzytkownikMenedzer.wybierzOpcjeZMenuGlownego())
             {
