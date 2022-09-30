@@ -95,6 +95,8 @@ string MenedzerAdresatow::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string teks
 
 void MenedzerAdresatow::wypiszAdresatowZalogowanegoUzytkownika()
 {
+    cout << endl;
+
     for (int i = 0; i < (int) adresaci.size(); i++)
     {
         cout << adresaci[i].pobierzId() << endl;
@@ -104,6 +106,7 @@ void MenedzerAdresatow::wypiszAdresatowZalogowanegoUzytkownika()
         cout << adresaci[i].pobierzEmail() << endl;
         cout << adresaci[i].pobierzAdres() << endl << endl;
     }
+    system("pause");
 }
 
 void MenedzerAdresatow::wczytajAdresatowZalogowanegoUzytkownikaZPliku()

@@ -6,3 +6,4 @@
 5|1|Sylwia|Biala|555|s.biala@gmail.com|Szczecin|
 6|1|Maria|Wolny|777|maria.wolny@gmail.com|Bialystok|
 7|2|Maria|Wolny|99|wolnymaria@wp.pl|Bialystok|
+8|3|Andrzej|Sobas|222|sobas@gmail.com|Krakow|

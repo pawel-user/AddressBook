@@ -1,5 +1,25 @@
 #include "UzytkownikMenedzer.h"
 
+void UzytkownikMenedzer::wyswietlMenuGlowne()
+{
+    menuGlowne.wyswietlMenuGlowne();
+}
+
+char UzytkownikMenedzer::wybierzOpcjeZMenuGlownego()
+{
+    return(menuGlowne.wybierzOpcjeZMenuGlownego());
+}
+
+void UzytkownikMenedzer::wyswietlMenuUzytkownika()
+{
+    menuUzytkownika.wyswietlMenuUzytkownika();
+}
+
+char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika()
+{
+    return(menuUzytkownika.wybierzOpcjeZMenuUzytkownika());
+}
+
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -118,7 +138,6 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
             cout << endl << "Haslo zostalo zmienione." << endl;
         }
     }
-
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
@@ -134,3 +153,16 @@ int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
 }
+
+void UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika(int aktualneIdZalogowanegoUzytkownika)
+{
+    if(aktualneIdZalogowanegoUzytkownika >= 0)
+        idZalogowanegoUzytkownika = aktualneIdZalogowanegoUzytkownika;
+}
+
+void UzytkownikMenedzer::wyswietlKomunikatBrakOpcji()
+{
+    cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+    system("pause");
+}
+
