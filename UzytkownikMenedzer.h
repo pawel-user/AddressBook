@@ -18,7 +18,7 @@ using namespace std;
 
 class UzytkownikMenedzer
 {
-    static int idZalogowanegoUzytkownika;
+    int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
     MenuGlowne menuGlowne;
     MenuUzytkownika menuUzytkownika;
