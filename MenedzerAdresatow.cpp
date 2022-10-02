@@ -79,7 +79,6 @@ Adresat MenedzerAdresatow::podajDaneNowegoAdresata()
 
     cout << "Podaj adres: ";
     adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
-
     return adresat;
 }
 

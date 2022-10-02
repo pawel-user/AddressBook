@@ -58,3 +58,8 @@ void KsiazkaAdresowa::zarzadzajMenuUzytkownika()
         break;
     }
 }
+
+void KsiazkaAdresowa::dodajAdresata()
+{
+    menedzerAdresatow.dodajAdresata();
+}

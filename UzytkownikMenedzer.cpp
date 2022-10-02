@@ -165,4 +165,3 @@ void UzytkownikMenedzer::wyswietlKomunikatBrakOpcji()
     cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
     system("pause");
 }
-

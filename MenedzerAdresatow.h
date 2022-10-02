@@ -21,6 +21,7 @@ class MenedzerAdresatow
     int idZalogowanegoUzytkownika;
     vector <Adresat> adresaci;
 
+<<<<<<< HEAD
     PlikZAdresatami plikZAdresatami;
 
     Adresat podajDaneNowegoAdresata();
@@ -42,6 +43,14 @@ public:
     void ustawIdOstatniegoAdresata(int aktualneIdOstatniegoAdresata);
     void ustawIdUsunietegoAdresata(int aktualneIdUsunietegoAdresata);
 
+=======
+    Adresat podajDaneNowegoAdresata();
+    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+
+public:
+    MenedzerAdresatow();
+    int dodajAdresata();
+>>>>>>> origin/master
 };
 
 #endif
