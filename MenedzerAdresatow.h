@@ -16,31 +16,22 @@ using namespace std;
 
 class MenedzerAdresatow
 {
-    int idOstatniegoAdresata;
-    int idUsunietegoAdresata;
-    int idZalogowanegoUzytkownika;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
-
     PlikZAdresatami plikZAdresatami;
 
     Adresat podajDaneNowegoAdresata();
-    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     void wyswietlDaneAdresata(Adresat adresat);
 
 public:
-    MenedzerAdresatow(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
-    void wylogowanieUzytkownika();
-    int dodajAdresata();
-    void wypiszAdresatowZalogowanegoUzytkownika();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    MenedzerAdresatow(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
+        : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+    {
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
+    void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-
-    int pobierzIdZalogowanegoUzytkownika();
-    int pobierzIdOstatniegoAdresata();
-    int pobierzIdUsunietegoAdresata();
-    void ustawIdZalogowanegoUzytkownika(int aktualneIdZalogowanegoUzytkownika);
-    void ustawIdOstatniegoAdresata(int aktualneIdOstatniegoAdresata);
-    void ustawIdUsunietegoAdresata(int aktualneIdUsunietegoAdresata);
+    //void wypiszAdresatowZalogowanegoUzytkownika();
 };
 
 #endif

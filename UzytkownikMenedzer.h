@@ -29,23 +29,25 @@ class UzytkownikMenedzer
     bool czyIstniejeLogin(string login);
 
 public:
-    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+    {
+        idZalogowanegoUzytkownika = 0;
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    };
     void wyswietlMenuGlowne();
     char wybierzOpcjeZMenuGlownego();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
     void logowanieUzytkownika();
     void wyswietlKomunikatBrakOpcji();
+    bool czyUzytkownikJestZalogowany();
 
     void wyswietlMenuUzytkownika();
     char wybierzOpcjeZMenuUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    int wylogowanieUzytkownika();
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void wylogowanieUzytkownika();
 
     int pobierzIdZalogowanegoUzytkownika();
-    void ustawIdZalogowanegoUzytkownika(int aktualneIdZalogowanegoUzytkownika);
 };
 
 #endif
