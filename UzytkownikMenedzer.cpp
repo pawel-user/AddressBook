@@ -29,6 +29,7 @@ void UzytkownikMenedzer::rejestracjaUzytkownika()
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");
+    cin.sync();
 }
 
 Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika()
@@ -84,9 +85,12 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
 {
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
 }
 
 void UzytkownikMenedzer::logowanieUzytkownika()
@@ -107,21 +111,20 @@ void UzytkownikMenedzer::logowanieUzytkownika()
 
                     if (uzytkownicy[i].pobierzHaslo() == haslo)
                     {
+                        idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
                         cout << endl << "Zalogowales sie." << endl << endl;
                         system("pause");
-                        idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
                         return;
                     }
             }
-            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            cout << endl << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            idZalogowanegoUzytkownika = 0;
             return;
         }
     }
     cout << "Nie ma uzytkownika z takim loginem." << endl << endl;
     system("pause");
-    idZalogowanegoUzytkownika = 0;
+    return;
 }
 
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
@@ -135,29 +138,22 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
         if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
         {
             uzytkownicy[i].ustawHaslo(noweHaslo);
-            cout << endl << "Haslo zostalo zmienione." << endl;
+            cout << endl << "Haslo zostalo zmienione poprawnie." << endl;
+            system("pause");
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-int UzytkownikMenedzer::wylogowanieUzytkownika()
+void UzytkownikMenedzer::wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
     cout << "Pomyslnie wylogowales sie." << endl;
-
-    return idZalogowanegoUzytkownika;
 }
 
 int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
-}
-
-void UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika(int aktualneIdZalogowanegoUzytkownika)
-{
-    if(aktualneIdZalogowanegoUzytkownika >= 0)
-        idZalogowanegoUzytkownika = aktualneIdZalogowanegoUzytkownika;
 }
 
 void UzytkownikMenedzer::wyswietlKomunikatBrakOpcji()

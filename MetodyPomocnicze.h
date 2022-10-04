@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <algorithm>
 
 #include "Uzytkownik.h"
 
@@ -16,6 +17,7 @@ public:
     static string wczytajLinie();
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
     static char wczytajZnak();
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 };
 
 #endif
