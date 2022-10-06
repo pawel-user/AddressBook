@@ -17,6 +17,7 @@ using namespace std;
 class MenedzerAdresatow
 {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
+    char wybor;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
 
@@ -25,12 +26,14 @@ class MenedzerAdresatow
 
 public:
     MenedzerAdresatow(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
-        : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+        : ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika), plikZAdresatami(nazwaPlikuZAdresatami)
     {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
+    char wybierzOpcjeZMenuUzytkownika();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+
     //void wypiszAdresatowZalogowanegoUzytkownika();
 };
 

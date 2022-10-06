@@ -25,8 +25,20 @@ public:
         delete menedzerAdresatow;
         menedzerAdresatow = NULL;
     }
-    void zarzadzajMenuGlowne();
-    void zarzadzajMenuUzytkownika();
+    bool czyUzytkownikJestZalogowany();
+
+    void wyswietlMenuGlowne();
+    char wybierzOpcjeZMenuGlownego();
+    void rejestracjaUzytkownika();
+    void logowanieUzytkownika();
+    void wyswietlKomunikatBrakOpcji();
+
+    void wyswietlMenuUzytkownika();
+    char wybierzOpcjeZMenuUzytkownika();
+    void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    void wylogowanieUzytkownika();
 };
 
 #endif

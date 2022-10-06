@@ -19,9 +19,8 @@ using namespace std;
 class UzytkownikMenedzer
 {
     int idZalogowanegoUzytkownika;
+    char wybor;
     vector <Uzytkownik> uzytkownicy;
-    MenuGlowne menuGlowne;
-    MenuUzytkownika menuUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
 
     Uzytkownik podajDaneNowegoUzytkownika();
@@ -34,18 +33,16 @@ public:
         idZalogowanegoUzytkownika = 0;
         uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
     };
-    void wyswietlMenuGlowne();
+    bool czyUzytkownikJestZalogowany();
     char wybierzOpcjeZMenuGlownego();
     void rejestracjaUzytkownika();
-    void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
-    void wyswietlKomunikatBrakOpcji();
-    bool czyUzytkownikJestZalogowany();
 
-    void wyswietlMenuUzytkownika();
     char wybierzOpcjeZMenuUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
+
+    void wypiszWszystkichUzytkownikow();
 
     int pobierzIdZalogowanegoUzytkownika();
 };

@@ -1,5 +1,12 @@
 #include "MenedzerAdresatow.h"
 
+char MenedzerAdresatow::wybierzOpcjeZMenuUzytkownika()
+{
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+    return wybor;
+}
+
 void MenedzerAdresatow::dodajAdresata()
 {
     Adresat adresat;
