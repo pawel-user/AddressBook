@@ -9,8 +9,6 @@
 
 #include "Uzytkownik.h"
 #include "Adresat.h"
-#include "MenuGlowne.h"
-#include "MenuUzytkownika.h"
 #include "PlikZUzytkownikami.h"
 #include "MenedzerAdresatow.h"
 
