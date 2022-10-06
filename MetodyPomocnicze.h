@@ -5,8 +5,6 @@
 #include <sstream>
 #include <algorithm>
 
-#include "Uzytkownik.h"
-
 using namespace std;
 
 class MetodyPomocnicze
