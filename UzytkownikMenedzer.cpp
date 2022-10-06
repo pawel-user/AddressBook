@@ -1,23 +1,18 @@
 #include "UzytkownikMenedzer.h"
 
-void UzytkownikMenedzer::wyswietlMenuGlowne()
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
 {
-    menuGlowne.wyswietlMenuGlowne();
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
 }
 
 char UzytkownikMenedzer::wybierzOpcjeZMenuGlownego()
 {
-    return(menuGlowne.wybierzOpcjeZMenuGlownego());
-}
-
-void UzytkownikMenedzer::wyswietlMenuUzytkownika()
-{
-    menuUzytkownika.wyswietlMenuUzytkownika();
-}
-
-char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika()
-{
-    return(menuUzytkownika.wybierzOpcjeZMenuUzytkownika());
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+    return wybor;
 }
 
 void UzytkownikMenedzer::rejestracjaUzytkownika()
@@ -73,24 +68,6 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login)
         }
     }
     return false;
-}
-
-void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
-{
-    for (int i = 0; i < (int) uzytkownicy.size(); i++)
-    {
-        cout << uzytkownicy[i].pobierzId() << endl;
-        cout << uzytkownicy[i].pobierzLogin() << endl;
-        cout << uzytkownicy[i].pobierzHaslo() << endl;
-    }
-}
-
-bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
-{
-    if (idZalogowanegoUzytkownika > 0)
-        return true;
-    else
-        return false;
 }
 
 void UzytkownikMenedzer::logowanieUzytkownika()
@@ -151,13 +128,26 @@ void UzytkownikMenedzer::wylogowanieUzytkownika()
     cout << "Pomyslnie wylogowales sie." << endl;
 }
 
+
+
+
+
+
+
+
+
+void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
+{
+    for (int i = 0; i < (int) uzytkownicy.size(); i++)
+    {
+        cout << uzytkownicy[i].pobierzId() << endl;
+        cout << uzytkownicy[i].pobierzLogin() << endl;
+        cout << uzytkownicy[i].pobierzHaslo() << endl;
+    }
+}
+
 int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
 }
 
-void UzytkownikMenedzer::wyswietlKomunikatBrakOpcji()
-{
-    cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
-    system("pause");
-}

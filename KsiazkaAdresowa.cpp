@@ -1,70 +1,87 @@
 #include "KsiazkaAdresowa.h"
 
-void KsiazkaAdresowa::zarzadzajMenuGlowne()
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
-    while (true)
-    {
-        if (!uzytkownikMenedzer.czyUzytkownikJestZalogowany())
-        {
-            uzytkownikMenedzer.wyswietlMenuGlowne();
+    return uzytkownikMenedzer.czyUzytkownikJestZalogowany();
+}
 
-            switch (uzytkownikMenedzer.wybierzOpcjeZMenuGlownego())
-            {
-            case '1':
-                uzytkownikMenedzer.rejestracjaUzytkownika();
-                break;
-            case '2':
-                uzytkownikMenedzer.logowanieUzytkownika();
-                if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
-                {
-                    menedzerAdresatow = new MenedzerAdresatow(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
-                }
-                break;
-            case '9':
-                exit(0);
-                break;
-            default:
-                uzytkownikMenedzer.wyswietlKomunikatBrakOpcji();
-                break;
-            }
-        }
-        else
-        {
-            zarzadzajMenuUzytkownika();
-        }
+void KsiazkaAdresowa::wyswietlMenuGlowne()
+{
+    system("cls");
+    cout << "    >>> MENU  GLOWNE <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Rejestracja" << endl;
+    cout << "2. Logowanie" << endl;
+    cout << "9. Koniec programu" << endl;
+    cout << "---------------------------" << endl;
+}
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
+{
+    return uzytkownikMenedzer.wybierzOpcjeZMenuGlownego();
+}
+
+void KsiazkaAdresowa::rejestracjaUzytkownika()
+{
+    uzytkownikMenedzer.rejestracjaUzytkownika();
+}
+
+void KsiazkaAdresowa::logowanieUzytkownika()
+{
+    uzytkownikMenedzer.logowanieUzytkownika();
+
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        menedzerAdresatow = new MenedzerAdresatow(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
     }
 }
 
-void KsiazkaAdresowa::zarzadzajMenuUzytkownika()
+void KsiazkaAdresowa::wyswietlKomunikatBrakOpcji()
 {
-    uzytkownikMenedzer.wyswietlMenuUzytkownika();
+    cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+    system("pause");
+}
 
-    switch (uzytkownikMenedzer.wybierzOpcjeZMenuUzytkownika())
-    {
-    case '1':
-        if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
-        {
-            menedzerAdresatow->dodajAdresata();
-        }
-        else
-        {
-            cout << "Aby dodac adresata nalezy najpierw sie zalogowac." << endl;
-            system("pause");
-        }
-        break;
-    case '4':
-        menedzerAdresatow->wyswietlWszystkichAdresatow();
-        break;
-    case '7':
-        uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
-        break;
-    case '8':
-        uzytkownikMenedzer.wylogowanieUzytkownika();
-        delete menedzerAdresatow;
-        menedzerAdresatow = NULL;
-        break;
-    default:
-        uzytkownikMenedzer.wyswietlKomunikatBrakOpcji();
-        break;
-    }
+void KsiazkaAdresowa::wyswietlMenuUzytkownika()
+{
+    system("cls");
+    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj adresata" << endl;
+    //cout << "2. Wyszukaj po imieniu" << endl;
+    //cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "4. Wyswietl adresatow" << endl;
+    //cout << "5. Usun adresata" << endl;
+    //cout << "6. Edytuj adresata" << endl;
+    cout << "---------------------------" << endl;
+    cout << "7. Zmien haslo" << endl;
+    cout << "8. Wyloguj sie" << endl;
+    cout << "---------------------------" << endl;
+}
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
+{
+    return menedzerAdresatow->wybierzOpcjeZMenuUzytkownika();
+}
+
+void KsiazkaAdresowa::dodajAdresata()
+{
+    menedzerAdresatow->dodajAdresata();
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    menedzerAdresatow->wyswietlWszystkichAdresatow();
+}
+
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
+{
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
+}
+
+void KsiazkaAdresowa::wylogowanieUzytkownika()
+{
+    uzytkownikMenedzer.wylogowanieUzytkownika();
+    delete menedzerAdresatow;
+    menedzerAdresatow = NULL;
 }

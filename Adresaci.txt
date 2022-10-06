@@ -10,3 +10,4 @@
 10|1|Aleksander|Bialy|111 000 111|bialy.aleksander@gmail.com|Zamosc|
 11|3|Maria|Kusy|111 000 111|mariakusy@wp.pl|Zakopane|
 12|4|Witold|Wspanialy|444 333 111|witold.wspanial@yahoo.com|Wilno|
+13|5|Michal|Wisniewski|000 000 000|wisniewski@wp.pl|Katowice|
