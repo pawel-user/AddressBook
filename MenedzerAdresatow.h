@@ -33,8 +33,6 @@ public:
     char wybierzOpcjeZMenuUzytkownika();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-
-    //void wypiszAdresatowZalogowanegoUzytkownika();
 };
 
 #endif

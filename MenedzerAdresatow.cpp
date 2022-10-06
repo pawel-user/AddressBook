@@ -88,19 +88,3 @@ void MenedzerAdresatow::wyswietlDaneAdresata(Adresat adresat)
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
-
-/*void MenedzerAdresatow::wypiszAdresatowZalogowanegoUzytkownika()
-{
-    cout << endl;
-
-    for (int i = 0; i < (int) adresaci.size(); i++)
-    {
-        cout << adresaci[i].pobierzId() << endl;
-        cout << adresaci[i].pobierzIdUzytkownika() << endl;
-        cout << adresaci[i].pobierzImie() << " " << adresaci[i].pobierzNazwisko() << endl;
-        cout << adresaci[i].pobierzNumerTelefonu() << endl;
-        cout << adresaci[i].pobierzEmail() << endl;
-        cout << adresaci[i].pobierzAdres() << endl << endl;
-    }
-    system("pause");
-}*/

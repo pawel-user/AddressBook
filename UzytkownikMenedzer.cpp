@@ -128,24 +128,6 @@ void UzytkownikMenedzer::wylogowanieUzytkownika()
     cout << "Pomyslnie wylogowales sie." << endl;
 }
 
-
-
-
-
-
-
-
-
-void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
-{
-    for (int i = 0; i < (int) uzytkownicy.size(); i++)
-    {
-        cout << uzytkownicy[i].pobierzId() << endl;
-        cout << uzytkownicy[i].pobierzLogin() << endl;
-        cout << uzytkownicy[i].pobierzHaslo() << endl;
-    }
-}
-
 int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
