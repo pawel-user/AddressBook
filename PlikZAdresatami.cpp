@@ -143,10 +143,65 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
     return adresat;
 }
 
+void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata)
+{
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+    string wczytanaLinia = "";
+    const string NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI = "Adresaci_tymczasowo.txt";
+    bool czyUsunietoAdresataZPliku = false;
+    int numerWczytanejLiniiWPlikuTekstowym = 1;
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI.c_str(), ios::out | ios::app);
+
+    if (odczytywanyPlikTekstowy.good() == true && idUsuwanegoAdresata != 0)
+    {
+        while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
+        {
+            if (czyUsunietoAdresataZPliku == true && numerWczytanejLiniiWPlikuTekstowym == 2)
+                tymczasowyPlikTekstowy << wczytanaLinia;
+            else if (czyUsunietoAdresataZPliku == true && numerWczytanejLiniiWPlikuTekstowym > 2)
+                tymczasowyPlikTekstowy << endl << wczytanaLinia;
+            else if (idUsuwanegoAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia))
+                czyUsunietoAdresataZPliku = true;
+            else if (numerWczytanejLiniiWPlikuTekstowym == 1)
+                tymczasowyPlikTekstowy << wczytanaLinia;
+            else
+                tymczasowyPlikTekstowy << endl << wczytanaLinia;
+            numerWczytanejLiniiWPlikuTekstowym++;
+        }
+    }
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
+
+    usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
+    zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, NAZWA_PLIKU_Z_ADRESATAMI);
+}
+
+void PlikZAdresatami::usunPlik(string nazwaPlikuZRozszerzeniem)
+{
+    if (remove(nazwaPlikuZRozszerzeniem.c_str()) == 0) {}
+    else
+        cout << "Nie udalo sie usunac pliku " << nazwaPlikuZRozszerzeniem << endl;
+}
+
+void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
+{
+    if (rename(staraNazwa.c_str(), nowaNazwa.c_str()) == 0) {}
+    else
+        cout << "Nazwa pliku nie zostala zmieniona." << staraNazwa << endl;
+}
+
 int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
     return idOstatniegoAdresata;
 }
+
+/*int PlikZAdresatami::pobierzIdUsuwanegoAdresata()
+{
+    return idOstatniegoAdresata;
+}*/
 
 void PlikZAdresatami::ustawIdOstatniegoAdresata(int aktualneIdOstatniegoAdresata)
 {
@@ -155,3 +210,11 @@ void PlikZAdresatami::ustawIdOstatniegoAdresata(int aktualneIdOstatniegoAdresata
         idOstatniegoAdresata = aktualneIdOstatniegoAdresata;
     }
 }
+
+/*void PlikZAdresatami::ustawIdUsuwanegoAdresata(int aktualneIdUsuwanegoAdresata)
+{
+    if (aktualneIdUsuwanegoAdresata >= 0)
+    {
+        idUsuwanegoAdresata = aktualneIdUsuwanegoAdresata;
+    }
+}*/
