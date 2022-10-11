@@ -37,6 +37,7 @@ public:
     char wybierzOpcjeZMenuUzytkownika();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    void usunAdresata();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
 };

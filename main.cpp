@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci-test.txt");
 
     while (true)
     {
@@ -50,6 +50,9 @@ int main()
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
+            case '5':
+                ksiazkaAdresowa.usunAdresata();
+                break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
@@ -62,5 +65,20 @@ int main()
             }
         }
     }
+    return 0;
+}
+
+//TEST: Usuwanie adresata
+int UsuwanieAdresata_main()
+{
+    //MenedzerAdresatow menedzerAdresatow("Adresaci-test.txt", 1);
+    PlikZAdresatami plikZAdresatami("Adresaci-test.txt");
+
+    //menedzerAdresatow.wyswietlWszystkichAdresatow();
+    //menedzerAdresatow.usunAdresata();
+    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(1);
+    plikZAdresatami.usunWybranegoAdresataZPliku(2);
+    //menedzerAdresatow.wyswietlWszystkichAdresatow();
+
     return 0;
 }
