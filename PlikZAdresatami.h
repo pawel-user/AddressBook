@@ -16,7 +16,6 @@ class PlikZAdresatami
     const string NAZWA_PLIKU_Z_ADRESATAMI;
     const string NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
-    //int idUsuwanegoAdresata;
 
     bool czyPlikJestPusty();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
@@ -31,17 +30,14 @@ public:
     : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
     {
         idOstatniegoAdresata = 0;
-        //idUsuwanegoAdresata = 0;
     };
     bool dopiszAdresataDoPliku(Adresat adresat);
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void usunWybranegoAdresataZPliku(int idUsuwanegoAdresata);
-
+    void edytujAdresataWPliku(Adresat adresat);
 
     int pobierzIdOstatniegoAdresata();
-    //int pobierzIdUsuwanegoAdresata();
     void ustawIdOstatniegoAdresata(int aktualneIdOstatniegoAdresata);
-    //void ustawIdUsuwanegoAdresata(int aktualneIdUsuwanegoAdresata);
 };
 
 #endif
