@@ -73,11 +73,11 @@ void MenedzerAdresatow::wyszukajAdresatowPoImieniu()
         imiePoszukiwanegoAdresata = MetodyPomocnicze::wczytajLinie();
         imiePoszukiwanegoAdresata = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imiePoszukiwanegoAdresata);
 
-        for (vector <Adresat>::iterator  itr = adresaci.begin(); itr != adresaci.end(); itr++)
+        for (int i = 0; i < (int) adresaci.size(); i++)
         {
-            if (itr -> pobierzImie() == imiePoszukiwanegoAdresata)
+            if (adresaci[i].pobierzImie() == imiePoszukiwanegoAdresata)
             {
-                wyswietlDaneAdresata(*itr);
+                wyswietlDaneAdresata(adresaci[i]);
                 iloscAdresatow++;
             }
         }
@@ -105,11 +105,11 @@ void MenedzerAdresatow::wyszukajAdresatowPoNazwisku()
         nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::wczytajLinie();
         nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwiskoPoszukiwanegoAdresata);
 
-        for (vector <Adresat>::iterator  itr = adresaci.begin(); itr != adresaci.end(); itr++)
+        for (int i = 0; i < (int) adresaci.size(); i++)
         {
-            if (itr -> pobierzNazwisko() == nazwiskoPoszukiwanegoAdresata)
+            if (adresaci[i].pobierzNazwisko() == nazwiskoPoszukiwanegoAdresata)
             {
-                wyswietlDaneAdresata(*itr);
+                wyswietlDaneAdresata(adresaci[i]);
                 iloscAdresatow++;
             }
         }
