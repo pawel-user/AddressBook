@@ -40,6 +40,7 @@ public:
     char wybierzOpcjeZMenuUzytkownika();
     void dodajAdresata();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
     void wyswietlWszystkichAdresatow();
     void usunAdresata();
     void edytujAdresata();
