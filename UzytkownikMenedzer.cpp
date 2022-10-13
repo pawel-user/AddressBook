@@ -10,6 +10,7 @@ bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
 
 char UzytkownikMenedzer::wybierzOpcjeZMenuGlownego()
 {
+    char wybor;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
     return wybor;

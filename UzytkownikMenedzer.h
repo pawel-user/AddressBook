@@ -17,7 +17,6 @@ using namespace std;
 class UzytkownikMenedzer
 {
     int idZalogowanegoUzytkownika;
-    char wybor;
     vector <Uzytkownik> uzytkownicy;
     PlikZUzytkownikami plikZUzytkownikami;
 

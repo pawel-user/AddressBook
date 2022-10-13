@@ -24,7 +24,7 @@ public:
     {
         delete menedzerAdresatow;
         menedzerAdresatow = NULL;
-    }
+    };
     bool czyUzytkownikJestZalogowany();
 
     void wyswietlMenuGlowne();
