@@ -76,21 +76,3 @@ int main()
     }
     return 0;
 }
-
-
-//TEST: WyszukiwanieAdresata
-int WyszukiwanieAdresata_main()
-{
-    MenedzerAdresatow menedzerAdresatow("Adresaci-test.txt", 1);
-    //PlikZAdresatami plikZAdresatami("Adresaci-test.txt");
-
-    menedzerAdresatow.wyswietlWszystkichAdresatow();
-    //menedzerAdresatow.usunAdresata();
-    //plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(1);
-    //plikZAdresatami.usunWybranegoAdresataZPliku(2);
-    //menedzerAdresatow.wyswietlWszystkichAdresatow();
-    menedzerAdresatow.wyszukajAdresatowPoImieniu();
-    menedzerAdresatow.wyszukajAdresatowPoNazwisku();
-
-    return 0;
-}
