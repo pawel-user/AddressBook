@@ -12,11 +12,11 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 
         if (czyPlikJestPusty() == true)
         {
-            plikTekstowy << liniaZDanymiAdresata;
+            plikTekstowy << endl << liniaZDanymiAdresata;
         }
         else
         {
-            plikTekstowy << endl << liniaZDanymiAdresata;
+            plikTekstowy << liniaZDanymiAdresata;
         }
         idOstatniegoAdresata++;
         plikTekstowy.close();
@@ -167,20 +167,6 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata)
 
     usunPlik(pobierzNazwePliku());
     zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, pobierzNazwePliku());
-}
-
-void PlikZAdresatami::usunPlik(string nazwaPlikuZRozszerzeniem)
-{
-    if (remove(nazwaPlikuZRozszerzeniem.c_str()) == 0) {}
-    else
-        cout << "Nie udalo sie usunac pliku " << nazwaPlikuZRozszerzeniem << endl;
-}
-
-void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
-{
-    if (rename(staraNazwa.c_str(), nowaNazwa.c_str()) == 0) {}
-    else
-        cout << "Nazwa pliku nie zostala zmieniona." << staraNazwa << endl;
 }
 
 void PlikZAdresatami::edytujAdresataWPliku(Adresat adresat)
