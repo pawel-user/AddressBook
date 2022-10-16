@@ -12,6 +12,8 @@ protected:
     const string NAZWA_PLIKU;
 
     bool czyPlikJestPusty();
+    void usunPlik(string nazwaPlikuZRozszerzeniem);
+    void zmienNazwePliku(string staraNazwa, string nowaNazwa);
 
 public:
     PlikTekstowy(string nazwaPliku) : NAZWA_PLIKU(nazwaPliku) {};
